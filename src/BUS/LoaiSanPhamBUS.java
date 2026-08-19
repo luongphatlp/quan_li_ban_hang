@@ -54,7 +54,5 @@ public class LoaiSanPhamBUS {
         return dao.delete(maLoai);
     }
 
-    public ArrayList<LoaiSanPhamDTO> search(String keyword) {
-        return dao.search(keyword);
-    }
+
 }

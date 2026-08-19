@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/quan_li_ban_hang/Quan_li_ban_hang.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/SanPhamDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/LoaiSanPhamDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/KhachHangDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/NhanVienDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/NhaCungCapDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/PhieuNhapDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/ChiTietPhieuNhapDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/HoaDonDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/ChiTietHoaDonDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/KhuyenMaiDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/ThanhToanDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/ChiTietHoaDonDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/ChiTietPhieuNhapDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/HoaDonDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/KhachHangDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/KhuyenMaiDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/LoaiSanPhamDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/NhaCungCapDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/NhanVienDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/PhieuNhapDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/ThanhToanDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/SanPhamDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/ChiTietHoaDonBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/ChiTietPhieuNhapBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/HoaDonBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/KhachHangBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/KhuyenMaiBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/LoaiSanPhamBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/NhaCungCapBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/NhanVienBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/PhieuNhapBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/SanPhamBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/ThanhToanBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/GUI/QuanLyKhachHang.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/GUI/NhapHang.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/GUI/BanHang.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/GUI/KhuyenMai.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/GUI/ThongKe.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DTO/SanPhamKhuyenMaiDTO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/MyConnection.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/TestDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/DAO/SanPhamKhuyenMaiDAO.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/SanPhamKhuyenMaiBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/NhapHangBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/BUS/BanHangBUS.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/GUI/MainFrame.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/GUI/SanPhamPanel.java</file>
+            <file>file:/D:/projectnetbean/quan_li_ban_hang/src/GUI/TrangChuPanel.java</file>
+        </group>
+    </open-files>
+</project-private>
