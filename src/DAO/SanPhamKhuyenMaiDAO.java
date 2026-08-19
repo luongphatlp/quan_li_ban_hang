@@ -1,20 +1,20 @@
 package DAO;
 
-import DTO.LoaiSanPhamDTO;
+import DTO.SanPhamKhuyenMaiDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class LoaiSanPhamDAO {
+public class SanPhamKhuyenMaiDAO {
 
     // =========================
     // LẤY TẤT CẢ
     // =========================
-    public ArrayList<LoaiSanPhamDTO> getAll() {
+    public ArrayList<SanPhamKhuyenMaiDTO> getAll() {
 
-        ArrayList<LoaiSanPhamDTO> list = new ArrayList<>();
+        ArrayList<SanPhamKhuyenMaiDTO> list = new ArrayList<>();
 
-        String sql = "SELECT * FROM loai_san_pham";
+        String sql = "SELECT * FROM san_pham_khuyen_mai";
 
         try (
             Connection conn = MyConnection.getConnection();
@@ -24,13 +24,13 @@ public class LoaiSanPhamDAO {
 
             while (rs.next()) {
 
-                LoaiSanPhamDTO lsp = new LoaiSanPhamDTO();
+                SanPhamKhuyenMaiDTO spkm =
+                        new SanPhamKhuyenMaiDTO();
 
-                lsp.setMaLoai(rs.getInt("ma_loai"));
-                lsp.setTenLoai(rs.getString("ten_loai"));
-                lsp.setTrangThai(rs.getInt("trang_thai"));
+                spkm.setMaKm(rs.getInt("ma_km"));
+                spkm.setMaSp(rs.getInt("ma_sp"));
 
-                list.add(lsp);
+                list.add(spkm);
             }
 
         } catch (SQLException e) {
@@ -42,50 +42,13 @@ public class LoaiSanPhamDAO {
 
 
     // =========================
-    // LẤY THEO MÃ
-    // =========================
-    public LoaiSanPhamDTO getById(int maLoai) {
-
-        String sql = """
-                     SELECT *
-                     FROM loai_san_pham
-                     WHERE ma_loai = ?
-                     """;
-
-        try (
-            Connection conn = MyConnection.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql)
-        ) {
-
-            ps.setInt(1, maLoai);
-
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-
-                return new LoaiSanPhamDTO(
-                    rs.getInt("ma_loai"),
-                    rs.getString("ten_loai"),
-                    rs.getInt("trang_thai")
-                );
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return null;
-    }
-
-
-    // =========================
     // THÊM
     // =========================
-    public boolean insert(LoaiSanPhamDTO lsp) {
+    public boolean insert(SanPhamKhuyenMaiDTO spkm) {
 
         String sql = """
-                     INSERT INTO loai_san_pham
-                     (ten_loai, trang_thai)
+                     INSERT INTO san_pham_khuyen_mai
+                     (ma_km, ma_sp)
                      VALUES (?, ?)
                      """;
 
@@ -94,39 +57,8 @@ public class LoaiSanPhamDAO {
             PreparedStatement ps = conn.prepareStatement(sql)
         ) {
 
-            ps.setString(1, lsp.getTenLoai());
-            ps.setInt(2, lsp.getTrangThai());
-
-            return ps.executeUpdate() > 0;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return false;
-    }
-
-
-    // =========================
-    // SỬA
-    // =========================
-    public boolean update(LoaiSanPhamDTO lsp) {
-
-        String sql = """
-                     UPDATE loai_san_pham
-                     SET ten_loai = ?,
-                         trang_thai = ?
-                     WHERE ma_loai = ?
-                     """;
-
-        try (
-            Connection conn = MyConnection.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql)
-        ) {
-
-            ps.setString(1, lsp.getTenLoai());
-            ps.setInt(2, lsp.getTrangThai());
-            ps.setInt(3, lsp.getMaLoai());
+            ps.setInt(1, spkm.getMaKm());
+            ps.setInt(2, spkm.getMaSp());
 
             return ps.executeUpdate() > 0;
 
@@ -141,11 +73,12 @@ public class LoaiSanPhamDAO {
     // =========================
     // XÓA
     // =========================
-    public boolean delete(int maLoai) {
+    public boolean delete(int maKm, int maSp) {
 
         String sql = """
-                     DELETE FROM loai_san_pham
-                     WHERE ma_loai = ?
+                     DELETE FROM san_pham_khuyen_mai
+                     WHERE ma_km = ?
+                       AND ma_sp = ?
                      """;
 
         try (
@@ -153,7 +86,8 @@ public class LoaiSanPhamDAO {
             PreparedStatement ps = conn.prepareStatement(sql)
         ) {
 
-            ps.setInt(1, maLoai);
+            ps.setInt(1, maKm);
+            ps.setInt(2, maSp);
 
             return ps.executeUpdate() > 0;
 
@@ -162,5 +96,67 @@ public class LoaiSanPhamDAO {
         }
 
         return false;
+    }
+
+
+    // =========================
+    // XÓA TOÀN BỘ SẢN PHẨM
+    // KHỎI KHUYẾN MÃI
+    // =========================
+    public boolean deleteByKhuyenMai(int maKm) {
+
+        String sql = """
+                     DELETE FROM san_pham_khuyen_mai
+                     WHERE ma_km = ?
+                     """;
+
+        try (
+            Connection conn = MyConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)
+        ) {
+
+            ps.setInt(1, maKm);
+
+            return ps.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+
+    // =========================
+    // LẤY SẢN PHẨM CỦA KHUYẾN MÃI
+    // =========================
+    public ArrayList<Integer> getSanPhamByKhuyenMai(int maKm) {
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        String sql = """
+                     SELECT ma_sp
+                     FROM san_pham_khuyen_mai
+                     WHERE ma_km = ?
+                     """;
+
+        try (
+            Connection conn = MyConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)
+        ) {
+
+            ps.setInt(1, maKm);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                list.add(rs.getInt("ma_sp"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return list;
     }
 }

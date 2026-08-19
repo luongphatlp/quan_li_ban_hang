@@ -1,13 +1,60 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package BUS;
 
-/**
- *
- * @author Latitude E7470
- */
+import DAO.LoaiSanPhamDAO;
+import DTO.LoaiSanPhamDTO;
+
+import java.util.ArrayList;
+
 public class LoaiSanPhamBUS {
-    
+
+    private final LoaiSanPhamDAO dao = new LoaiSanPhamDAO();
+
+    public ArrayList<LoaiSanPhamDTO> getAll() {
+        return dao.getAll();
+    }
+
+    public LoaiSanPhamDTO getById(int maLoai) {
+        return dao.getById(maLoai);
+    }
+
+    public boolean insert(LoaiSanPhamDTO lsp) {
+
+        if (lsp == null) {
+            return false;
+        }
+
+        if (lsp.getTenLoai() == null ||
+            lsp.getTenLoai().trim().isEmpty()) {
+            return false;
+        }
+
+        return dao.insert(lsp);
+    }
+
+    public boolean update(LoaiSanPhamDTO lsp) {
+
+        if (lsp == null || lsp.getMaLoai() <= 0) {
+            return false;
+        }
+
+        if (lsp.getTenLoai() == null ||
+            lsp.getTenLoai().trim().isEmpty()) {
+            return false;
+        }
+
+        return dao.update(lsp);
+    }
+
+    public boolean delete(int maLoai) {
+
+        if (maLoai <= 0) {
+            return false;
+        }
+
+        return dao.delete(maLoai);
+    }
+
+    public ArrayList<LoaiSanPhamDTO> search(String keyword) {
+        return dao.search(keyword);
+    }
 }
