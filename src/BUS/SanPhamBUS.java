@@ -4,13 +4,17 @@ import DAO.SanPhamDAO;
 import DTO.SanPhamDTO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SanPhamBUS {
 
     private final SanPhamDAO dao = new SanPhamDAO();
-
-    public ArrayList<SanPhamDTO> getAll() {
-        return dao.getAll();
+    private List<SanPhamDTO> ds=new ArrayList<>();
+    public void docDanhSach(){
+        ds=dao.getAll();
+    }
+    public List<SanPhamDTO> getDS() {
+        return ds;
     }
 
     public SanPhamDTO getById(int maSp) {
