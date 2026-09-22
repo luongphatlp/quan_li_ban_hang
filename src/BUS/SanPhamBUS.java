@@ -22,6 +22,7 @@ public class SanPhamBUS {
     }
     
     public SanPhamDTO search(int id){
+        if(id<0) return null;
         for(SanPhamDTO sp:ds) 
             if(sp.getMaSp()==id)
                 return sp;
