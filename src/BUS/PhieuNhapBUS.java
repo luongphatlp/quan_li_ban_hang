@@ -2,14 +2,12 @@ package BUS;
 
 import DAO.PhieuNhapDAO;
 import DTO.PhieuNhapDTO;
-
 import java.util.ArrayList;
 
 public class PhieuNhapBUS {
 
     private final PhieuNhapDAO dao =
             new PhieuNhapDAO();
-
     public ArrayList<PhieuNhapDTO> getAll() {
         return dao.getAll();
     }
@@ -54,4 +52,5 @@ public class PhieuNhapBUS {
 
         return dao.delete(maPn);
     }
+
 }

@@ -20,6 +20,14 @@ public class SanPhamBUS {
     public SanPhamDTO getById(int maSp) {
         return dao.getById(maSp);
     }
+    
+    public SanPhamDTO search(int id){
+        if(id<0) return null;
+        for(SanPhamDTO sp:ds) 
+            if(sp.getMaSp()==id)
+                return sp;
+        return null;
+    }
 
     public boolean insert(SanPhamDTO sp) {
 
@@ -80,5 +88,6 @@ public class SanPhamBUS {
         return dao.delete(maSp);
     }
 
+    //day la thay toi moi
 
 }
